@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tukivu MoU Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    .verified {
+      font-size: 1.5rem;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="verified">✅ MoU Verification</h2>
+  <p id="message">Loading...</p>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const mou = urlParams.get('mou');
+
+    if (mou) {
+      document.getElementById("message").innerHTML =
+        `This MoU is verified.<br><strong>Serial Number:</strong> ${mou}<br><br>Issued by Tukivu Systems Ltd.`;
+    } else {
+      document.getElementById("message").innerText = "No MoU ID provided.";
+    }
+  </script>
+</body>
+</html>
